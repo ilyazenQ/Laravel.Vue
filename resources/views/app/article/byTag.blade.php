@@ -20,7 +20,7 @@
                         <div class="mt-4">
                             Теги:
                             @foreach ($article->tags as $tag)
-                                <a href="{{ route('article.tag', $tag->id) }}" class="badge bg-danger">{{$tag->label}}</a>
+                                <a href="{{ route('article.showTag',$tag) }}" class="badge bg-danger">{{$tag->label}}</a>
                             @endforeach
                         </div>
                     </div>

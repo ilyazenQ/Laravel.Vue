@@ -20,6 +20,19 @@ class Article extends Model
 
     ]; // поля не доступные при массовом заполнении
     // указываем отношения
+    public  function scopeFindByTag($query)
+    {
+        return $query->with('tags','state')
+            ->orderBy('created_at','desc')
+            ->paginate(10);
+
+    }
+
+    public function scopeFindBySlug($query,$slug)
+    {
+        return $query->with('comments','tags','state')->where('slug',$slug)->firstOrFail();
+    }
+
     public function comments() {
         return $this->hasMany(Comment::class);
         // Article может иметь много comment
@@ -40,5 +53,8 @@ class Article extends Model
     }
     public function scopeLastLimit($query,$num) {
        return $query->with('state','tags')->orderBy('created_at','desc')->take($num)->get();
+    }
+    public function scopeAllPaginate($query,$num) {
+        return $query->with('state','tags')->orderBy('created_at','desc')->paginate($num);
     }
 }

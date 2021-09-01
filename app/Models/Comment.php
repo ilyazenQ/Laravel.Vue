@@ -13,5 +13,8 @@ class Comment extends Model
         return $this->belongsTo(Article::class);
         // Комментарий относится к статье
     }
+    public function createdAtForHumans(){
+        return $this->created_at->diffForHumans();
+    }
 
 }
