@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // \Api\Models\User::factory(10)->create();
 
         $tags = \App\Models\Tag::factory(10)->create();
         // создаем 10 тегов
