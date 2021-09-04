@@ -8,6 +8,10 @@ import store from './store';
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('article-component', require('./components/ArticleComponent.vue').default);
+Vue.component('views-component', require('./components/ViewsComponent.vue').default);
+Vue.component('likes-component', require('./components/LikesComponent.vue').default);
+Vue.component('comments-component', require('./components/CommentComponent.vue').default);
+
 
 
 const app = new Vue({
@@ -20,5 +24,6 @@ const app = new Vue({
         this.$store.commit('SET_SLUG',slug);
         this.$store.dispatch('getArticleData',slug);
         //dispatch - вызываем action из index
+        this.$store.dispatch('viewsIncrement',slug);
     }
 });

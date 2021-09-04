@@ -16,6 +16,7 @@
                 <likes-component></likes-component>
              </div>
          </div>
+        <comments-component></comments-component>
      </div>
  </template>
 
