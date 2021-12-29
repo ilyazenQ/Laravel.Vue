@@ -22,9 +22,6 @@
                                href="{{ route('article.index')  }}">Каталог статей</a>
                         </li>
                     </ul>
-                    <a class="d-flex justify-content-end " href="https://github.com/rageserg">
-                        <i class="bi bi-github" style="font-size: 2rem; color: #000000;"></i>
-                    </a>
                 </div>
             </nav>
             @yield('hero')
